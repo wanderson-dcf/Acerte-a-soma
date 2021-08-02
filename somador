@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+    background-image:linear-gradient(90deg,rgb(0, 153, 255)10%,blue);
+    color:rgb(49, 173, 255);
+    text-align: center;
+    margin-top: 100px;
+}
+#todos_valores{
+    font-family: 15pt Arial, Helvetica, sans-serif;
+    border: solid 0.5px;
+    padding: 15px;
+    width:300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px black;
+    margin: auto;
+}
+footer{
+    margin-top: 15px;
+    color: rgb(3, 14, 117);
+    text-shadow: 3px 3px 10px darkblue;
+}
+#botão:hover{
+    color: black;
+    background-color:blue;
+}
+h1{
+    color: rgb(4, 4, 105);
+    text-shadow:  1px 1px 5px black;
+}
+#valores{
+    text-align: left;
+    color: blue;
+}
+#resultado{
+    margin-top: 15px;
+    color: rgb(15, 15, 170);
+}
+    </style>
+    <title>Somando</title>
+</head>
+<body>
+    <header><h1>Somando números</h1></header>
+    <section id="todos_valores">
+        <div id="valores">
+            <h2>Faça seu Calculo</h2>
+            Primeiro numero:<input type="number" name="numeral1" id="numeral1"><br>
+            Segundo numero:<input type="number" name="numeral2" id="numeral2"><br>
+            <input id="botão" type="button" value="calcular" onclick="calcular()">
+        </div>
+        <div id="resultado">
+            Aguardando resultado...
+        </div>
+    </section>
+    <footer>Wanderson do Carmo Ferreira</footer>
+    <script>
+            let numero1 = document.getElementById('numeral1');
+    let numero2 = document.getElementById('numeral2');
+    let msg = document.getElementById('resultado');
+
+function calcular(){
+    if (numero1.value.length == 0 || numero2.value.length == 0){
+        msg.innerHTML = 'Por favor preencha os valores,antes de prosseguir.'
+    }else{
+        let convert1 = Number(numero1.value)
+        let convert2 = Number(numero2.value)
+        soma = convert1 + convert2;
+        msg.innerHTML = `Resultado: ${soma}`; 
+    } 
+}
+    </script>
+</body>
+</html>
